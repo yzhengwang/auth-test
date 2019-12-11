@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/mall?serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password:
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.yzw.auth.dao.entity

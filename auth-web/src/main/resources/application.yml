@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dao
+  thymeleaf:
+    prefix: classpath:/views/
+    suffix: .html
+    cache: false
+    mode: HTML5
+    encoding: utf-8
