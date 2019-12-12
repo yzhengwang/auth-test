@@ -2,37 +2,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
 </head>
- 
+
 <style>
     .login-container {
-        margin: 50px;
         width: 100%;
     }
- 
+
     .form-container {
-        margin: 0px auto;
-        width: 50%;
+        padding-top: 50px;
+        margin: 0 auto;
+        width: 100%;
         text-align: center;
-        box-shadow: 1px 1px 10px #888888;
         height: 300px;
-        padding: 5px;
     }
- 
+
     input {
         margin-top: 10px;
-        width: 350px;
+        width: 96%;
         height: 30px;
         border-radius: 3px;
-        border: 1px #E9686B solid;
-        padding-left: 2px;
- 
+        border: 1px #bababa solid;
+        padding-left: 8px;
     }
- 
- 
+
     .btn {
-        width: 350px;
+        width: 99%;
         height: 35px;
         line-height: 35px;
         cursor: pointer;
@@ -43,26 +42,48 @@
         border: none;
         font-size: 15px;
     }
- 
-    .title{
+
+    .title {
         margin-top: 5px;
         font-size: 18px;
         color: #E9686B;
+    }
+
+    .explain {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        color: #bababa;
     }
 </style>
 <body>
 <div class="login-container">
     <div class="form-container">
         <p class="title">用户登录</p>
-        <form name="loginForm" method="post" th:action="${loginProcessUrl}">
-            <input type="text" name="username" placeholder="用户名"/>
+        <form id="loginForm" name="loginForm" method="post" th:action="${loginProcessUrl}">
+            <input id="username" type="text" name="username" placeholder="用户名"/>
             <br>
-            <input type="password" name="password" placeholder="密码"/>
+            <input id="password" type="password" name="password" placeholder="密码"/>
             <br>
             <button type="submit" class="btn">登 &nbsp;&nbsp; 录</button>
         </form>
         <p style="color: red" th:if="${param.error}">用户名或密码错误</p>
     </div>
+    <p class="explain">XXX登陆页~~~</p>
 </div>
+<!--<script>-->
+    <!--submitForm();-->
+    <!--function submitForm() {-->
+        <!--var loginForm = document.getElementById("loginForm");-->
+        <!--var userName = document.getElementById("username");-->
+        <!--var password = document.getElementById("password");-->
+        <!--console.log(222, userName);-->
+        <!--userName.value = 'admin';-->
+        <!--password.value = 'admin';-->
+        <!--loginForm.submit();-->
+    <!--}-->
+<!--</script>-->
 </body>
 </html>

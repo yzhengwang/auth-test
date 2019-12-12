@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -72,11 +71,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        web.ignoring().antMatchers("/oauth/check_token");
 //    }
 
-/*    @Override
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http
-                // 必须配置，不然OAuth2的http配置不生效----不明觉厉
+                // 必须配置，不然OAuth2的http配置不生效
                 .requestMatchers()
                 .antMatchers("/auth/login", "/auth/authorize", "/oauth/authorize")
                 .and()
@@ -87,12 +86,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated();
 
-        // 表单登录
-        http.formLogin()
-                // 登录页面
-                .loginPage("/auth/login")
-                // 登录处理url
-                .loginProcessingUrl("/auth/authorize");
-        http.httpBasic().disable();
-    }*/
+        // 表单登录 处理登陆页面 处理登陆url
+        http
+                .formLogin()
+                .loginPage("/auth/login").loginProcessingUrl("/auth/authorize");
+        http
+                .httpBasic()
+                .disable();
+    }
 }
