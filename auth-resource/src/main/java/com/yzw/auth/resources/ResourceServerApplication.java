@@ -3,6 +3,8 @@ package com.yzw.auth.resources;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
+
 // +----------------------------------------------------------------------
 // | 广西西途比网络科技有限公司 www.c2b666.com
 // +----------------------------------------------------------------------
